@@ -7,14 +7,14 @@
       "RelativeMoniker": "D:0:0:{2338352E-5C06-47E5-AF36-1F67CB8CE11A}|Controller Configuration\\Controller Configuration.csproj|solutionrelative:controller configuration\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2338352E-5C06-47E5-AF36-1F67CB8CE11A}|Controller Configuration\\Controller Configuration.csproj|c:\\users\\fajar\\downloads\\controller configuration\\controller configuration\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2338352E-5C06-47E5-AF36-1F67CB8CE11A}|Controller Configuration\\Controller Configuration.csproj|C:\\Users\\fajar\\Downloads\\Controller Configuration\\controller configuration\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2338352E-5C06-47E5-AF36-1F67CB8CE11A}|Controller Configuration\\Controller Configuration.csproj|solutionrelative:controller configuration\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fajar\\AppData\\Local\\Temp\\.vsdbgsrc\\b2baf5d923382a0ff4dcc8727889731fb3f797c1fe6c90c4843b471ee6ac79f3\\Graphics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2338352E-5C06-47E5-AF36-1F67CB8CE11A}|Controller Configuration\\Controller Configuration.csproj|c:\\users\\fajar\\downloads\\controller configuration\\controller configuration\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "AbsoluteMoniker": "D:0:0:{2338352E-5C06-47E5-AF36-1F67CB8CE11A}|Controller Configuration\\Controller Configuration.csproj|C:\\Users\\fajar\\Downloads\\Controller Configuration\\controller configuration\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
       "RelativeMoniker": "D:0:0:{2338352E-5C06-47E5-AF36-1F67CB8CE11A}|Controller Configuration\\Controller Configuration.csproj|solutionrelative:controller configuration\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     },
     {
@@ -89,8 +89,7 @@
               "ToolTip": "C:\\Users\\fajar\\Downloads\\Controller Configuration\\Controller Configuration\\Properties\\Settings.settings",
               "RelativeToolTip": "Controller Configuration\\Properties\\Settings.settings",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2025-05-24T22:09:39.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T22:09:39.225Z"
             },
             {
               "$type": "Document",
@@ -102,8 +101,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AgIAAOYSAAAAAAAAAAAQwPkSAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-05-24T16:12:06.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T16:12:06.218Z"
             },
             {
               "$type": "Document",
@@ -152,8 +150,7 @@
               "ToolTip": "C:\\Users\\fajar\\Downloads\\Controller Configuration\\Controller Configuration\\Controller Configuration.csproj",
               "RelativeToolTip": "Controller Configuration\\Controller Configuration.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-07T09:31:16.68Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T09:31:16.68Z"
             },
             {
               "$type": "Document",
@@ -165,8 +162,7 @@
               "RelativeToolTip": "Controller Configuration\\Form1.Designer.cs",
               "ViewState": "AgIAAAIBAAAAAAAAAAAvwBQBAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T07:54:01.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T07:54:01.688Z"
             },
             {
               "$type": "Document",
@@ -178,8 +174,7 @@
               "RelativeToolTip": "Controller Configuration\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T07:49:47.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T07:49:47.601Z"
             }
           ]
         }
