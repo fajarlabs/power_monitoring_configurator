@@ -45,8 +45,9 @@ Berikut fitur-fitur utama yang tersedia dalam aplikasi ini:
 ## 🚀 Cara Penggunaan
 
 1. Buka aplikasi.
-2. Pilih port serial yang tersedia dan klik **Connect**.
-3. Gunakan tab konfigurasi untuk mengatur WiFi, Telegram, dan parameter lainnya.
-4. Gunakan menu **Test** untuk mencoba fungsi relay dan kirim notifikasi Telegram.
+2. Hubungkan ke perangkat melalui USB dan MicroUSB
+3. Pilih port serial yang tersedia dan klik **Connect**.
+4. Gunakan tab konfigurasi untuk mengatur WiFi, Telegram, dan parameter lainnya.
+5. Gunakan menu **Test** untuk mencoba fungsi relay dan kirim notifikasi Telegram.
 
 ---
