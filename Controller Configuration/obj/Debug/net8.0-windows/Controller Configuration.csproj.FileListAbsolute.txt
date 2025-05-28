@@ -73,3 +73,4 @@ C:\Users\fajar\Downloads\Controller Configuration\Controller Configuration\obj\D
 C:\Users\fajar\Downloads\Controller Configuration\Controller Configuration\obj\Debug\net8.0-windows\Controller Configuration.pdb
 C:\Users\fajar\Downloads\Controller Configuration\Controller Configuration\obj\Debug\net8.0-windows\Controller Configuration.genruntimeconfig.cache
 C:\Users\fajar\Downloads\Controller Configuration\Controller Configuration\obj\Debug\net8.0-windows\ref\Controller Configuration.dll
+C:\Users\fajar\Downloads\Controller Configuration\Controller Configuration\obj\Debug\net8.0-windows\Controller Configuration.sourcelink.json

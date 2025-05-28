@@ -152,20 +152,26 @@
                             string[] parts = data.Split(',');
 
                             string route_id = parts[0];
-                            if(route_id == "1" && parts.Length >= 3)
+                            if (route_id == "1" && parts.Length >= 3)
                             {
                                 tb_wifi_name.Text = parts[1];
                                 tb_wifi_password.Text = parts[2];
-                            } else if(route_id == "2" && parts.Length >= 3)
+                            }
+                            else if (route_id == "2" && parts.Length >= 3)
                             {
                                 tb_pulse_kwh.Text = parts[1];
                                 tb_kwh_minimum.Text = parts[2];
-                            } else if(route_id == "3" && parts.Length >= 3)
+                                tb_daily_limit.Text = parts[3];
+                                lbl_sisa_kwh.Text = parts[4];
+                                tb_time_sampling.Text = parts[5];
+                                tb_tdl.Text = parts[6];
+                            }
+                            else if (route_id == "3" && parts.Length >= 3)
                             {
-                                tb_token_telegram.Text = parts[1]; 
+                                tb_token_telegram.Text = parts[1];
                                 tb_recipient_userid.Text = parts[2];
                             }
-                                
+
                             Debug.WriteLine(data);
                         }
                         else
@@ -432,7 +438,7 @@
             //    Console.Write(exWifSave.Message);
             //}
 
-            string dataToSend = $"<2,{tb_pulse_kwh.Text},{tb_kwh_minimum.Text}>";
+            string dataToSend = $"<2,{tb_kwh_minimum.Text},{tb_daily_limit.Text},{tb_time_sampling.Text},{tb_tdl.Text}>";
 
             if (!string.IsNullOrWhiteSpace(dataToSend))
             {
@@ -544,6 +550,7 @@
             btn_get_wifi.Enabled = enable;
             btn_save_wifi.Enabled = enable;
 
+            tb_daily_limit.Enabled = enable;
             tb_kwh_minimum.Enabled = enable;
             tb_pulse_kwh.Enabled = enable;
             btn_save_kwh_setting.Enabled = enable;
@@ -557,6 +564,7 @@
             btn_relay_on.Enabled = enable;
             btn_send_telegram.Enabled = enable;
             btn_off_relay.Enabled = enable;
+            btn_reset_0.Enabled = enable;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -568,6 +576,92 @@
                 serialPort1.WriteLine(dataToSend);
                 listBox1.Items.Add($"[→] Sent: {dataToSend}");
                 listBox1.TopIndex = listBox1.Items.Count - 1;
+            }
+            else
+            {
+                MessageBox.Show("Input kosong. Masukkan teks untuk dikirim.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_reset_0_Click(object sender, EventArgs e)
+        {
+            string dataToSend = $"<20>"; // 13
+
+            DialogResult result = MessageBox.Show(
+                "Apakah Anda yakin ingin mengirim perintah reset?",
+                "Konfirmasi",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                if (!string.IsNullOrWhiteSpace(dataToSend))
+                {
+                    serialPort1.WriteLine(dataToSend);
+                    listBox1.Items.Add($"[→] Sent: {dataToSend}");
+                    listBox1.TopIndex = listBox1.Items.Count - 1;
+
+                    // ✅ Tambahkan delay di sini (2 detik)
+                    Thread.Sleep(500);
+
+                    // Lanjutkan kirim data setelah delay
+                    dataToSend = $"<2>";
+
+                    if (!string.IsNullOrWhiteSpace(dataToSend))
+                    {
+                        serialPort1.WriteLine(dataToSend);
+                        listBox1.Items.Add($"[→] Sent: {dataToSend}");
+                        listBox1.TopIndex = listBox1.Items.Count - 1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Input kosong. Masukkan teks untuk dikirim.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Input kosong. Masukkan teks untuk dikirim.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                listBox1.Items.Add("[!] Reset dibatalkan oleh pengguna.");
+                listBox1.TopIndex = listBox1.Items.Count - 1;
+            }
+        }
+
+        private void btn_topup_Click(object sender, EventArgs e)
+        {
+            string dataToSend = $"<4,{tb_pulse_kwh.Text}>";
+
+            if (!string.IsNullOrWhiteSpace(dataToSend))
+            {
+                serialPort1.WriteLine(dataToSend);
+                listBox1.Items.Add($"[→] Sent: {dataToSend}");
+                listBox1.TopIndex = listBox1.Items.Count - 1;
+
+                // ✅ Tambahkan delay di sini (2 detik)
+                Thread.Sleep(500);
+
+                // Lanjutkan kirim data setelah delay
+                dataToSend = $"<2>";
+
+                if (!string.IsNullOrWhiteSpace(dataToSend))
+                {
+                    serialPort1.WriteLine(dataToSend);
+                    listBox1.Items.Add($"[→] Sent: {dataToSend}");
+                    listBox1.TopIndex = listBox1.Items.Count - 1;
+                }
+                else
+                {
+                    MessageBox.Show("Input kosong. Masukkan teks untuk dikirim.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
