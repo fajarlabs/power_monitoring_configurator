@@ -668,6 +668,27 @@
                 MessageBox.Show("Input kosong. Masukkan teks untuk dikirim.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_relay_normal_Click(object sender, EventArgs e)
+        {
+            string dataToSend = $"<15>";
+
+            if (!string.IsNullOrWhiteSpace(dataToSend))
+            {
+                serialPort1.WriteLine(dataToSend);
+                listBox1.Items.Add($"[→] Sent: {dataToSend}");
+                listBox1.TopIndex = listBox1.Items.Count - 1;
+            }
+            else
+            {
+                MessageBox.Show("Input kosong. Masukkan teks untuk dikirim.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 
 }

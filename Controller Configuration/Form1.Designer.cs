@@ -78,6 +78,7 @@
             tb_token_telegram = new TextBox();
             label8 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            btn_relay_normal = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -281,6 +282,7 @@
             // 
             // groupBox5
             // 
+            groupBox5.Controls.Add(btn_relay_normal);
             groupBox5.Controls.Add(button1);
             groupBox5.Controls.Add(btn_off_relay);
             groupBox5.Controls.Add(btn_send_telegram);
@@ -297,9 +299,9 @@
             button1.BackColor = Color.Crimson;
             button1.Font = new Font("Segoe UI", 15F);
             button1.ForeColor = Color.Cornsilk;
-            button1.Location = new Point(627, 33);
+            button1.Location = new Point(448, 26);
             button1.Name = "button1";
-            button1.Size = new Size(153, 64);
+            button1.Size = new Size(153, 86);
             button1.TabIndex = 4;
             button1.Text = "REBOOT";
             button1.UseVisualStyleBackColor = false;
@@ -308,12 +310,12 @@
             // btn_off_relay
             // 
             btn_off_relay.BackColor = Color.DarkSlateGray;
-            btn_off_relay.Font = new Font("Microsoft Sans Serif", 15F);
+            btn_off_relay.Font = new Font("Microsoft Sans Serif", 9F);
             btn_off_relay.ForeColor = Color.Cornsilk;
-            btn_off_relay.Location = new Point(187, 33);
+            btn_off_relay.Location = new Point(145, 24);
             btn_off_relay.Name = "btn_off_relay";
             btn_off_relay.RightToLeft = RightToLeft.Yes;
-            btn_off_relay.Size = new Size(171, 64);
+            btn_off_relay.Size = new Size(121, 44);
             btn_off_relay.TabIndex = 3;
             btn_off_relay.Text = "RELAY-OFF";
             btn_off_relay.UseVisualStyleBackColor = false;
@@ -324,10 +326,10 @@
             btn_send_telegram.BackColor = Color.DodgerBlue;
             btn_send_telegram.Font = new Font("Microsoft Sans Serif", 15F);
             btn_send_telegram.ForeColor = Color.Cornsilk;
-            btn_send_telegram.Location = new Point(364, 33);
+            btn_send_telegram.Location = new Point(272, 26);
             btn_send_telegram.Name = "btn_send_telegram";
             btn_send_telegram.RightToLeft = RightToLeft.Yes;
-            btn_send_telegram.Size = new Size(257, 64);
+            btn_send_telegram.Size = new Size(170, 86);
             btn_send_telegram.TabIndex = 2;
             btn_send_telegram.Text = "SEND TELEGRAM";
             btn_send_telegram.UseVisualStyleBackColor = false;
@@ -336,12 +338,12 @@
             // btn_relay_on
             // 
             btn_relay_on.BackColor = Color.DarkTurquoise;
-            btn_relay_on.Font = new Font("Microsoft Sans Serif", 15F);
+            btn_relay_on.Font = new Font("Microsoft Sans Serif", 9F);
             btn_relay_on.ForeColor = Color.Cornsilk;
-            btn_relay_on.Location = new Point(10, 33);
+            btn_relay_on.Location = new Point(10, 24);
             btn_relay_on.Name = "btn_relay_on";
             btn_relay_on.RightToLeft = RightToLeft.Yes;
-            btn_relay_on.Size = new Size(171, 64);
+            btn_relay_on.Size = new Size(129, 44);
             btn_relay_on.TabIndex = 1;
             btn_relay_on.Text = "RELAY-ON";
             btn_relay_on.UseVisualStyleBackColor = false;
@@ -382,42 +384,43 @@
             // tb_tdl
             // 
             tb_tdl.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            tb_tdl.Location = new Point(142, 144);
+            tb_tdl.Location = new Point(167, 179);
             tb_tdl.Name = "tb_tdl";
-            tb_tdl.Size = new Size(143, 27);
+            tb_tdl.Size = new Size(157, 27);
             tb_tdl.TabIndex = 23;
             tb_tdl.TextAlign = HorizontalAlignment.Right;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label12.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             label12.ForeColor = Color.SeaGreen;
-            label12.Location = new Point(142, 121);
+            label12.Location = new Point(167, 157);
             label12.Name = "label12";
-            label12.Size = new Size(132, 20);
+            label12.Size = new Size(157, 19);
             label12.TabIndex = 22;
-            label12.Text = "Tarif Dasar Listrik";
+            label12.Text = "Tarif Dasar Listrik (Rp)";
+            label12.Click += label12_Click;
             // 
             // tb_time_sampling
             // 
             tb_time_sampling.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            tb_time_sampling.Location = new Point(6, 145);
+            tb_time_sampling.Location = new Point(6, 179);
             tb_time_sampling.Name = "tb_time_sampling";
-            tb_time_sampling.Size = new Size(124, 27);
+            tb_time_sampling.Size = new Size(155, 27);
             tb_time_sampling.TabIndex = 21;
             tb_time_sampling.TextAlign = HorizontalAlignment.Right;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             label11.ForeColor = Color.Indigo;
-            label11.Location = new Point(6, 122);
+            label11.Location = new Point(6, 157);
             label11.Name = "label11";
-            label11.Size = new Size(113, 20);
+            label11.Size = new Size(138, 19);
             label11.TabIndex = 20;
-            label11.Text = "Time Sampling";
+            label11.Text = "Waktu Sampling (s)";
             // 
             // btn_topup
             // 
@@ -448,7 +451,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label10.ForeColor = SystemColors.MenuText;
-            label10.Location = new Point(6, 182);
+            label10.Location = new Point(167, 23);
             label10.Name = "label10";
             label10.Size = new Size(79, 20);
             label10.TabIndex = 16;
@@ -458,22 +461,22 @@
             // tb_daily_limit
             // 
             tb_daily_limit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            tb_daily_limit.Location = new Point(142, 91);
+            tb_daily_limit.Location = new Point(167, 127);
             tb_daily_limit.Name = "tb_daily_limit";
-            tb_daily_limit.Size = new Size(143, 27);
+            tb_daily_limit.Size = new Size(157, 27);
             tb_daily_limit.TabIndex = 15;
             tb_daily_limit.TextAlign = HorizontalAlignment.Right;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             label9.ForeColor = SystemColors.MenuHighlight;
-            label9.Location = new Point(142, 68);
+            label9.Location = new Point(167, 105);
             label9.Name = "label9";
-            label9.Size = new Size(131, 20);
+            label9.Size = new Size(136, 19);
             label9.TabIndex = 14;
-            label9.Text = "Daily Limit (Kwh)";
+            label9.Text = "Batas Harian (Kwh)";
             label9.Click += label9_Click;
             // 
             // btn_get_kwh_setting
@@ -489,22 +492,22 @@
             // tb_kwh_minimum
             // 
             tb_kwh_minimum.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            tb_kwh_minimum.Location = new Point(6, 91);
+            tb_kwh_minimum.Location = new Point(6, 127);
             tb_kwh_minimum.Name = "tb_kwh_minimum";
-            tb_kwh_minimum.Size = new Size(124, 27);
+            tb_kwh_minimum.Size = new Size(155, 27);
             tb_kwh_minimum.TabIndex = 12;
             tb_kwh_minimum.TextAlign = HorizontalAlignment.Right;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(6, 68);
+            label3.Location = new Point(6, 105);
             label3.Name = "label3";
-            label3.Size = new Size(124, 20);
+            label3.Size = new Size(155, 19);
             label3.TabIndex = 11;
-            label3.Text = "Minimum (Kwh)";
+            label3.Text = "Batas Notifikasi (Kwh)";
             // 
             // btn_save_kwh_setting
             // 
@@ -519,32 +522,33 @@
             // tb_pulse_kwh
             // 
             tb_pulse_kwh.BackColor = SystemColors.ButtonHighlight;
-            tb_pulse_kwh.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            tb_pulse_kwh.Location = new Point(142, 32);
+            tb_pulse_kwh.Font = new Font("Segoe UI Semilight", 18F, FontStyle.Bold);
+            tb_pulse_kwh.Location = new Point(6, 47);
             tb_pulse_kwh.Name = "tb_pulse_kwh";
-            tb_pulse_kwh.Size = new Size(143, 27);
+            tb_pulse_kwh.Size = new Size(143, 47);
             tb_pulse_kwh.TabIndex = 4;
+            tb_pulse_kwh.Text = "0";
             tb_pulse_kwh.TextAlign = HorizontalAlignment.Right;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             label4.ForeColor = Color.SaddleBrown;
-            label4.Location = new Point(30, 35);
+            label4.Location = new Point(5, 23);
             label4.Name = "label4";
-            label4.Size = new Size(100, 20);
+            label4.Size = new Size(108, 19);
             label4.TabIndex = 3;
-            label4.Text = "Topup (Kwh)";
+            label4.Text = "Isi Ulang (Kwh)";
             // 
             // lbl_sisa_kwh
             // 
             lbl_sisa_kwh.AutoSize = true;
-            lbl_sisa_kwh.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            lbl_sisa_kwh.Font = new Font("Segoe UI Semilight", 18F, FontStyle.Bold);
             lbl_sisa_kwh.ForeColor = SystemColors.MenuText;
-            lbl_sisa_kwh.Location = new Point(92, 173);
+            lbl_sisa_kwh.Location = new Point(167, 50);
             lbl_sisa_kwh.Name = "lbl_sisa_kwh";
-            lbl_sisa_kwh.Size = new Size(29, 35);
+            lbl_sisa_kwh.Size = new Size(35, 41);
             lbl_sisa_kwh.TabIndex = 17;
             lbl_sisa_kwh.Text = "0";
             // 
@@ -624,6 +628,20 @@
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // btn_relay_normal
+            // 
+            btn_relay_normal.BackColor = Color.DarkViolet;
+            btn_relay_normal.Font = new Font("Microsoft Sans Serif", 9F);
+            btn_relay_normal.ForeColor = Color.Cornsilk;
+            btn_relay_normal.Location = new Point(10, 67);
+            btn_relay_normal.Name = "btn_relay_normal";
+            btn_relay_normal.RightToLeft = RightToLeft.Yes;
+            btn_relay_normal.Size = new Size(256, 45);
+            btn_relay_normal.TabIndex = 5;
+            btn_relay_normal.Text = "Relay Back To Normal";
+            btn_relay_normal.UseVisualStyleBackColor = false;
+            btn_relay_normal.Click += btn_relay_normal_Click;
             // 
             // Form1
             // 
@@ -705,5 +723,6 @@
         private TextBox tb_time_sampling;
         private Label label12;
         private TextBox tb_tdl;
+        private Button btn_relay_normal;
     }
 }
