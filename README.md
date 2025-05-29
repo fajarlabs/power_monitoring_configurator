@@ -42,7 +42,7 @@ Berikut fitur-fitur utama yang tersedia dalam aplikasi ini:
 
 ![Controller Configurator](https://github.com/fajarlabs/power_monitoring_configurator/blob/master/pictures/telegram.jpg)
 
-![Interface](https://github.com/fajarlabs/power_monitoring_configurator/blob/master/pictures/contoh_penggunaan.jpg)
+![Controller Configurator](https://github.com/fajarlabs/power_monitoring_configurator/blob/master/pictures/powermonitoring.png)
 
 ---
 
