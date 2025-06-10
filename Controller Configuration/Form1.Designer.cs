@@ -42,18 +42,25 @@
             listBox1 = new ListBox();
             label2 = new Label();
             groupBox3 = new GroupBox();
+            btn_show_passwod = new Button();
             btn_get_wifi = new Button();
             label6 = new Label();
             tb_wifi_password = new TextBox();
             btn_save_wifi = new Button();
             tb_wifi_name = new TextBox();
             groupBox5 = new GroupBox();
-            button1 = new Button();
+            btn_relay_normal = new Button();
+            btn_reboot = new Button();
             btn_off_relay = new Button();
             btn_send_telegram = new Button();
             btn_relay_on = new Button();
             btn_relay_off = new Button();
             groupBox4 = new GroupBox();
+            label15 = new Label();
+            tb_menit = new TextBox();
+            label14 = new Label();
+            tb_jam = new TextBox();
+            label13 = new Label();
             tb_tdl = new TextBox();
             label12 = new Label();
             tb_time_sampling = new TextBox();
@@ -78,7 +85,6 @@
             tb_token_telegram = new TextBox();
             label8 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            btn_relay_normal = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -97,7 +103,7 @@
             groupBox1.Controls.Add(comboBoxPorts);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(502, 126);
+            groupBox1.Size = new Size(565, 126);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Serial Configuration";
@@ -126,9 +132,9 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(385, 36);
+            btnRefresh.Location = new Point(462, 36);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(94, 29);
+            btnRefresh.Size = new Size(97, 29);
             btnRefresh.TabIndex = 5;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
@@ -145,7 +151,7 @@
             // 
             // btnConnectSer
             // 
-            btnConnectSer.Location = new Point(382, 78);
+            btnConnectSer.Location = new Point(462, 78);
             btnConnectSer.Name = "btnConnectSer";
             btnConnectSer.Size = new Size(97, 29);
             btnConnectSer.TabIndex = 2;
@@ -158,7 +164,7 @@
             comboBoxPorts.FormattingEnabled = true;
             comboBoxPorts.Location = new Point(112, 36);
             comboBoxPorts.Name = "comboBoxPorts";
-            comboBoxPorts.Size = new Size(243, 28);
+            comboBoxPorts.Size = new Size(344, 28);
             comboBoxPorts.TabIndex = 0;
             // 
             // groupBox2
@@ -166,7 +172,7 @@
             groupBox2.Controls.Add(btnCopy);
             groupBox2.Controls.Add(btnClear);
             groupBox2.Controls.Add(listBox1);
-            groupBox2.Location = new Point(520, 12);
+            groupBox2.Location = new Point(583, 12);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(786, 458);
             groupBox2.TabIndex = 1;
@@ -221,6 +227,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(btn_show_passwod);
             groupBox3.Controls.Add(btn_get_wifi);
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(tb_wifi_password);
@@ -229,14 +236,26 @@
             groupBox3.Controls.Add(label2);
             groupBox3.Location = new Point(12, 144);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(502, 112);
+            groupBox3.Size = new Size(565, 112);
             groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
             groupBox3.Text = "Wifi Setting";
             // 
+            // btn_show_passwod
+            // 
+            btn_show_passwod.Location = new Point(398, 66);
+            btn_show_passwod.Name = "btn_show_passwod";
+            btn_show_passwod.Size = new Size(58, 29);
+            btn_show_passwod.TabIndex = 17;
+            btn_show_passwod.Text = "Show";
+            btn_show_passwod.UseVisualStyleBackColor = true;
+            btn_show_passwod.Click += btn_show_passwod_Click;
+            btn_show_passwod.MouseDown += btn_show_passwod_MouseDown;
+            btn_show_passwod.MouseUp += btn_show_passwod_MouseUp;
+            // 
             // btn_get_wifi
             // 
-            btn_get_wifi.Location = new Point(385, 35);
+            btn_get_wifi.Location = new Point(462, 35);
             btn_get_wifi.Name = "btn_get_wifi";
             btn_get_wifi.Size = new Size(97, 27);
             btn_get_wifi.TabIndex = 16;
@@ -260,14 +279,15 @@
             // 
             tb_wifi_password.Location = new Point(129, 67);
             tb_wifi_password.Name = "tb_wifi_password";
-            tb_wifi_password.Size = new Size(226, 27);
+            tb_wifi_password.PasswordChar = '*';
+            tb_wifi_password.Size = new Size(267, 27);
             tb_wifi_password.TabIndex = 14;
             // 
             // btn_save_wifi
             // 
-            btn_save_wifi.Location = new Point(385, 67);
+            btn_save_wifi.Location = new Point(462, 66);
             btn_save_wifi.Name = "btn_save_wifi";
-            btn_save_wifi.Size = new Size(97, 27);
+            btn_save_wifi.Size = new Size(97, 29);
             btn_save_wifi.TabIndex = 10;
             btn_save_wifi.Text = "Save";
             btn_save_wifi.UseVisualStyleBackColor = true;
@@ -277,35 +297,49 @@
             // 
             tb_wifi_name.Location = new Point(129, 35);
             tb_wifi_name.Name = "tb_wifi_name";
-            tb_wifi_name.Size = new Size(226, 27);
+            tb_wifi_name.Size = new Size(327, 27);
             tb_wifi_name.TabIndex = 4;
             // 
             // groupBox5
             // 
             groupBox5.Controls.Add(btn_relay_normal);
-            groupBox5.Controls.Add(button1);
+            groupBox5.Controls.Add(btn_reboot);
             groupBox5.Controls.Add(btn_off_relay);
             groupBox5.Controls.Add(btn_send_telegram);
             groupBox5.Controls.Add(btn_relay_on);
-            groupBox5.Location = new Point(520, 474);
+            groupBox5.Location = new Point(583, 473);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(786, 118);
             groupBox5.TabIndex = 6;
             groupBox5.TabStop = false;
             groupBox5.Text = "Device Control";
             // 
-            // button1
+            // btn_relay_normal
             // 
-            button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Segoe UI", 15F);
-            button1.ForeColor = Color.Cornsilk;
-            button1.Location = new Point(448, 26);
-            button1.Name = "button1";
-            button1.Size = new Size(153, 86);
-            button1.TabIndex = 4;
-            button1.Text = "REBOOT";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
+            btn_relay_normal.BackColor = Color.DarkViolet;
+            btn_relay_normal.Font = new Font("Microsoft Sans Serif", 9F);
+            btn_relay_normal.ForeColor = Color.Cornsilk;
+            btn_relay_normal.Location = new Point(10, 67);
+            btn_relay_normal.Name = "btn_relay_normal";
+            btn_relay_normal.RightToLeft = RightToLeft.Yes;
+            btn_relay_normal.Size = new Size(256, 45);
+            btn_relay_normal.TabIndex = 5;
+            btn_relay_normal.Text = "Relay Back To Normal";
+            btn_relay_normal.UseVisualStyleBackColor = false;
+            btn_relay_normal.Click += btn_relay_normal_Click;
+            // 
+            // btn_reboot
+            // 
+            btn_reboot.BackColor = Color.Crimson;
+            btn_reboot.Font = new Font("Segoe UI", 15F);
+            btn_reboot.ForeColor = Color.Cornsilk;
+            btn_reboot.Location = new Point(448, 26);
+            btn_reboot.Name = "btn_reboot";
+            btn_reboot.Size = new Size(153, 86);
+            btn_reboot.TabIndex = 4;
+            btn_reboot.Text = "REBOOT";
+            btn_reboot.UseVisualStyleBackColor = false;
+            btn_reboot.Click += button1_Click_1;
             // 
             // btn_off_relay
             // 
@@ -358,6 +392,11 @@
             // 
             // groupBox4
             // 
+            groupBox4.Controls.Add(label15);
+            groupBox4.Controls.Add(tb_menit);
+            groupBox4.Controls.Add(label14);
+            groupBox4.Controls.Add(tb_jam);
+            groupBox4.Controls.Add(label13);
             groupBox4.Controls.Add(tb_tdl);
             groupBox4.Controls.Add(label12);
             groupBox4.Controls.Add(tb_time_sampling);
@@ -376,10 +415,64 @@
             groupBox4.Controls.Add(lbl_sisa_kwh);
             groupBox4.Location = new Point(12, 262);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(502, 212);
+            groupBox4.Size = new Size(565, 212);
             groupBox4.TabIndex = 7;
             groupBox4.TabStop = false;
             groupBox4.Text = "Kwh Setting";
+            groupBox4.Enter += groupBox4_Enter;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            label15.ForeColor = SystemColors.MenuHighlight;
+            label15.Location = new Point(398, 105);
+            label15.Name = "label15";
+            label15.Size = new Size(47, 19);
+            label15.TabIndex = 28;
+            label15.Text = "Menit";
+            // 
+            // tb_menit
+            // 
+            tb_menit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            tb_menit.Location = new Point(398, 127);
+            tb_menit.Name = "tb_menit";
+            tb_menit.Size = new Size(51, 27);
+            tb_menit.TabIndex = 27;
+            tb_menit.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label14.ForeColor = SystemColors.MenuText;
+            label14.Location = new Point(383, 130);
+            label14.Name = "label14";
+            label14.Size = new Size(13, 20);
+            label14.TabIndex = 26;
+            label14.Text = ":";
+            label14.TextAlign = ContentAlignment.TopRight;
+            // 
+            // tb_jam
+            // 
+            tb_jam.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            tb_jam.Location = new Point(329, 127);
+            tb_jam.Name = "tb_jam";
+            tb_jam.Size = new Size(51, 27);
+            tb_jam.TabIndex = 25;
+            tb_jam.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            label13.ForeColor = SystemColors.MenuHighlight;
+            label13.Location = new Point(336, 105);
+            label13.Name = "label13";
+            label13.Size = new Size(36, 19);
+            label13.TabIndex = 24;
+            label13.Text = "Jam";
+            label13.Click += label13_Click;
             // 
             // tb_tdl
             // 
@@ -426,7 +519,7 @@
             // 
             btn_topup.BackColor = Color.YellowGreen;
             btn_topup.ForeColor = Color.Snow;
-            btn_topup.Location = new Point(382, 31);
+            btn_topup.Location = new Point(462, 26);
             btn_topup.Name = "btn_topup";
             btn_topup.Size = new Size(97, 34);
             btn_topup.TabIndex = 19;
@@ -438,7 +531,7 @@
             // 
             btn_reset_0.BackColor = Color.Red;
             btn_reset_0.ForeColor = Color.White;
-            btn_reset_0.Location = new Point(385, 163);
+            btn_reset_0.Location = new Point(465, 158);
             btn_reset_0.Name = "btn_reset_0";
             btn_reset_0.Size = new Size(97, 39);
             btn_reset_0.TabIndex = 18;
@@ -474,14 +567,14 @@
             label9.ForeColor = SystemColors.MenuHighlight;
             label9.Location = new Point(167, 105);
             label9.Name = "label9";
-            label9.Size = new Size(136, 19);
+            label9.Size = new Size(130, 19);
             label9.TabIndex = 14;
-            label9.Text = "Batas Harian (Kwh)";
+            label9.Text = "Batas Harian (Wh)";
             label9.Click += label9_Click;
             // 
             // btn_get_kwh_setting
             // 
-            btn_get_kwh_setting.Location = new Point(385, 97);
+            btn_get_kwh_setting.Location = new Point(465, 92);
             btn_get_kwh_setting.Name = "btn_get_kwh_setting";
             btn_get_kwh_setting.Size = new Size(97, 27);
             btn_get_kwh_setting.TabIndex = 13;
@@ -511,7 +604,7 @@
             // 
             // btn_save_kwh_setting
             // 
-            btn_save_kwh_setting.Location = new Point(385, 130);
+            btn_save_kwh_setting.Location = new Point(465, 125);
             btn_save_kwh_setting.Name = "btn_save_kwh_setting";
             btn_save_kwh_setting.Size = new Size(97, 27);
             btn_save_kwh_setting.TabIndex = 10;
@@ -562,14 +655,14 @@
             groupBox6.Controls.Add(label8);
             groupBox6.Location = new Point(12, 480);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(502, 111);
+            groupBox6.Size = new Size(565, 111);
             groupBox6.TabIndex = 8;
             groupBox6.TabStop = false;
             groupBox6.Text = "Telegram Setting";
             // 
             // btn_get_telegram
             // 
-            btn_get_telegram.Location = new Point(385, 38);
+            btn_get_telegram.Location = new Point(462, 35);
             btn_get_telegram.Name = "btn_get_telegram";
             btn_get_telegram.Size = new Size(97, 27);
             btn_get_telegram.TabIndex = 13;
@@ -581,7 +674,7 @@
             // 
             tb_recipient_userid.Location = new Point(142, 71);
             tb_recipient_userid.Name = "tb_recipient_userid";
-            tb_recipient_userid.Size = new Size(213, 27);
+            tb_recipient_userid.Size = new Size(314, 27);
             tb_recipient_userid.TabIndex = 12;
             // 
             // label7
@@ -597,7 +690,7 @@
             // 
             // btn_save_telegram
             // 
-            btn_save_telegram.Location = new Point(385, 71);
+            btn_save_telegram.Location = new Point(462, 71);
             btn_save_telegram.Name = "btn_save_telegram";
             btn_save_telegram.Size = new Size(97, 27);
             btn_save_telegram.TabIndex = 10;
@@ -609,7 +702,7 @@
             // 
             tb_token_telegram.Location = new Point(92, 35);
             tb_token_telegram.Name = "tb_token_telegram";
-            tb_token_telegram.Size = new Size(263, 27);
+            tb_token_telegram.Size = new Size(364, 27);
             tb_token_telegram.TabIndex = 4;
             // 
             // label8
@@ -629,25 +722,11 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // btn_relay_normal
-            // 
-            btn_relay_normal.BackColor = Color.DarkViolet;
-            btn_relay_normal.Font = new Font("Microsoft Sans Serif", 9F);
-            btn_relay_normal.ForeColor = Color.Cornsilk;
-            btn_relay_normal.Location = new Point(10, 67);
-            btn_relay_normal.Name = "btn_relay_normal";
-            btn_relay_normal.RightToLeft = RightToLeft.Yes;
-            btn_relay_normal.Size = new Size(256, 45);
-            btn_relay_normal.TabIndex = 5;
-            btn_relay_normal.Text = "Relay Back To Normal";
-            btn_relay_normal.UseVisualStyleBackColor = false;
-            btn_relay_normal.Click += btn_relay_normal_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1318, 603);
+            ClientSize = new Size(1381, 603);
             Controls.Add(groupBox6);
             Controls.Add(groupBox4);
             Controls.Add(groupBox5);
@@ -712,7 +791,7 @@
         private Label label1;
         private Label label5;
         private Button btn_off_relay;
-        private Button button1;
+        private Button btn_reboot;
         private Label label9;
         private TextBox tb_daily_limit;
         private Label label10;
@@ -724,5 +803,11 @@
         private Label label12;
         private TextBox tb_tdl;
         private Button btn_relay_normal;
+        private Label label14;
+        private TextBox tb_jam;
+        private Label label13;
+        private TextBox tb_menit;
+        private Label label15;
+        private Button btn_show_passwod;
     }
 }

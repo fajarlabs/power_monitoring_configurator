@@ -5,6 +5,7 @@
     using System.Text;
     using System.Windows.Forms;
     using System.Diagnostics;
+    using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
     public partial class Form1 : Form
     {
@@ -18,6 +19,10 @@
             ScanAndListPorts();
             serialPort1.DataReceived += SerialPort1_DataReceived; // Tambah event handler
             serialPort1.ReadTimeout = 50;  // Waktu timeout pembacaan (ms)
+
+            System.Windows.Forms.ToolTip tooltip = new System.Windows.Forms.ToolTip();
+            tooltip.SetToolTip(tb_jam, "Ini adalah batas waktu (Jam) agar bisa menambah saldo Kwh kembali");
+            tooltip.SetToolTip(tb_menit, "Ini adalah batas waktu (Menit) agar bisa menambah saldo Kwh kembali");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -165,6 +170,8 @@
                                 lbl_sisa_kwh.Text = parts[4];
                                 tb_time_sampling.Text = parts[5];
                                 tb_tdl.Text = parts[6];
+                                tb_jam.Text = parts[7];
+                                tb_menit.Text = parts[8];
                             }
                             else if (route_id == "3" && parts.Length >= 3)
                             {
@@ -438,7 +445,7 @@
             //    Console.Write(exWifSave.Message);
             //}
 
-            string dataToSend = $"<2,{tb_kwh_minimum.Text},{tb_daily_limit.Text},{tb_time_sampling.Text},{tb_tdl.Text}>";
+            string dataToSend = $"<2,{tb_kwh_minimum.Text},{tb_daily_limit.Text},{tb_time_sampling.Text},{tb_tdl.Text},{tb_jam.Text},{tb_menit.Text}>";
 
             if (!string.IsNullOrWhiteSpace(dataToSend))
             {
@@ -565,6 +572,15 @@
             btn_send_telegram.Enabled = enable;
             btn_off_relay.Enabled = enable;
             btn_reset_0.Enabled = enable;
+
+            btn_topup.Enabled = enable;
+            btn_reboot.Enabled = enable;
+            tb_time_sampling.Enabled = enable;
+            tb_tdl.Enabled = enable;
+            btn_relay_normal.Enabled = enable;
+
+            tb_jam.Enabled = enable;
+            tb_menit.Enabled = enable;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -688,6 +704,31 @@
             {
                 MessageBox.Show("Input kosong. Masukkan teks untuk dikirim.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_show_passwod_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_show_passwod_MouseDown(object sender, MouseEventArgs e)
+        {
+            tb_wifi_password.PasswordChar = '\0';
+        }
+
+        private void btn_show_passwod_MouseUp(object sender, MouseEventArgs e)
+        {
+            tb_wifi_password.PasswordChar = '*';
         }
     }
 
